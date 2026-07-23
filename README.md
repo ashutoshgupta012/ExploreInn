@@ -127,12 +127,6 @@ or (for development)
 nodemon app.js
 ```
 
-Open:
-
-```
-http://localhost:8080
-```
-
 
 ---
 
