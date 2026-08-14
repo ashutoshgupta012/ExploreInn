@@ -109,7 +109,7 @@ app.use("/listings", searchRouter);
 //home route 
 app.get("/",(req,res)=>{
     res.redirect("/listings");
-})
+});
 
 
 //Error handler
