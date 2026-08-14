@@ -1,6 +1,6 @@
 # 🏡 ExploreInn
 
-A full-stack Airbnb-inspired web application that allows users to explore, create, and manage property listings. Users can securely register, upload property images, discover locations on interactive maps, and share reviews, providing a complete vacation rental experience.
+A full-stack property listing web application that allows users to explore, create, and manage property listings. Users can securely register, upload property images, discover locations on interactive maps, and share reviews, providing a complete vacation rental experience.
 
 ---
 
