@@ -6,43 +6,94 @@
         <button>Create new listings</button>
     </form>-->
     <style>
-       #filters{
-        display: flex;
-        flex-wrap:wrap ;
-        align-items: center;
-       }
-       .filter{
-        text-align: center;
-        margin-right: 2rem;
-        margin-top: 2rem;
-        opacity: 0.7;
-       }
-    .filter:hover{
-        opacity:1 ;
-        cursor: pointer;
-    }
-    .filter p{
-        font-size: 0.8rem;
-    }
-    .tax-info{
-        display: none;
-    }
-    .collapse {
-  &:not(.show) {
+       /* =========================
+   CATEGORIES
+========================= */
+
+#filters {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 15px 5px;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+#filters::-webkit-scrollbar {
     display: none;
-  }
+}
+
+.filter {
+    min-width: 70px;
+    text-align: center;
+    margin: 0;
+    opacity: 0.7;
+    color: #222;
+    transition: 0.2s ease;
+    white-space: nowrap;
+}
+
+.filter:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.filter i {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.filter p {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+
+/* Tax toggle */
+
+.tax-toggle {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   MOBILE CATEGORIES
+========================= */
+
+@media (max-width: 767px) {
+
+    #filters {
+        gap: 22px;
+        padding: 10px 5px;
+        margin-bottom: 10px;
     }
-    .tax-toggle{
-        border: 1px solid black;
-        border-radius: 1rem;
-        height: 2.5rem;
-        padding: 1rem;
-        margin-left: 2rem;
-        display: flex;
-        align-items: center;
+
+    .filter {
+        min-width: 65px;
     }
+
+    .filter i {
+        font-size: 1.15rem;
+    }
+
+    .filter p {
+        font-size: 0.7rem;
+        margin-top: 5px;
+    }
+
+    .tax-toggle {
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+}
+
     </style>
     <div id="filters">
+        <button class="mobile-menu-btn" id="categoryToggle">
+    ☰
+</button>
        <a href="/listings/category/Trending" class="filter text-decoration-none text-dark">
         <div><i class="fa-solid fa-fire"></i></div>
         <p>Trending</p>
@@ -106,7 +157,7 @@
     </div>
     
     
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1  mt-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-3">
     <% for(let listing of allListings) { %>
         <div class="col">
             <a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark">
@@ -142,6 +193,11 @@
     
     }
     })
+    const categoryToggle = document.getElementById("categoryToggle");
+
+categoryToggle.addEventListener("click", () => {
+    document.getElementById("filters").classList.toggle("categories-open");
+});
  </script>
 
 

@@ -108,7 +108,7 @@
 
 .starability-slot > label {
   position: relative;
-  display: block;
+  display: inline-block;
   float: left;
   width: 30px;
   height: 30px;
@@ -194,4 +194,49 @@
 .starability-slot > input:focus ~ label {
   -webkit-transition: background-position .7s;
   transition: background-position .7s;
+}
+
+/* Reviews */
+.review-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 5px;
+    min-height: 160px;
+}
+
+.review-card .card-body {
+    padding: 15px !important;
+}
+
+.review-card .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.review-card .card-text {
+    margin-bottom: 10px;
+}
+
+.review-card form {
+    margin-top: 10px;
+}
+
+.review-card .btn {
+    border-radius: 7px;
+}
+
+.starability-result {
+    margin-bottom: 10px;
+}
+
+/* Reviews responsive */
+@media (max-width: 767px) {
+    .review-card {
+        width: 100%;
+        margin: 0 0 15px 0 !important;
+    }
+
+    .review-card .card-body {
+        padding: 15px !important;
+    }
 }
